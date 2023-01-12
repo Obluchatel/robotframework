@@ -33,12 +33,15 @@ Failing conversion
 `None` as strict converter
     Check Test Case    ${TESTNAME}
 
+With library as argument to converter
+    Check Test Case    ${TESTNAME}
+
 Invalid converters
     Check Test Case    ${TESTNAME}
     Validate Errors
     ...    Custom converters must be callable, converter for Invalid is integer.
     ...    Custom converters must accept one positional argument, 'TooFewArgs' accepts none.
-    ...    Custom converters cannot have more than one mandatory argument, 'TooManyArgs' has 'one' and 'two'.
+    ...    Custom converters cannot have more than two mandatory arguments, 'TooManyArgs' has 'one', 'two' and 'three'.
     ...    Custom converters must accept one positional argument, 'NoPositionalArg' accepts none.
     ...    Custom converters cannot have mandatory keyword-only arguments, 'KwOnlyNotOk' has 'another' and 'kwo'.
     ...    Custom converters must be specified using types, got string 'Bad'.
